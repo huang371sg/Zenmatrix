@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & UI 设计公司 - 创新设计，智能未来</title>
+    <title>AI & UI Design Company - Innovative Design, Intelligent Future</title>
     <style>
         * {
             margin: 0;
@@ -85,6 +85,39 @@
         .nav-links a:hover::after {
             width: 100%;
             left: 0;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 2rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        .lang-btn:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -324,6 +357,10 @@
             .nav-links {
                 display: none;
             }
+            
+            .language-switcher {
+                margin-left: 0;
+            }
 
             .hero h1 {
                 font-size: 2.5rem;
@@ -394,12 +431,18 @@
     <header>
         <nav class="container">
             <div class="logo">AI & UI Design</div>
-            <ul class="nav-links">
-                <li><a href="#home">首頁</a></li>
-                <li><a href="#services">服務</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#contact">聯絡</a></li>
-            </ul>
+            <div style="display: flex; align-items: center;">
+                <ul class="nav-links">
+                    <li><a href="#home" data-en="Home" data-zh="首页">Home</a></li>
+                    <li><a href="#services" data-en="Services" data-zh="服务">Services</a></li>
+                    <li><a href="#about" data-en="About" data-zh="关于">About</a></li>
+                    <li><a href="#contact" data-en="Contact" data-zh="联系">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('zh')">中文</button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -407,9 +450,9 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>創新設計，智能未來</h1>
-                <p>專業的AI解決方案與UI/UX設計服務，為您的品牌打造獨特的數位體驗</p>
-                <a href="#contact" class="cta-button">開始合作</a>
+                <h1 data-en="Innovative Design, Intelligent Future" data-zh="创新设计，智能未来">Innovative Design, Intelligent Future</h1>
+                <p data-en="Professional AI solutions and UI/UX design services to create unique digital experiences for your brand" data-zh="专业的AI解决方案与UI/UX设计服务，为您的品牌打造独特的数字体验">Professional AI solutions and UI/UX design services to create unique digital experiences for your brand</p>
+                <a href="#contact" class="cta-button" data-en="Start Collaboration" data-zh="开始合作">Start Collaboration</a>
             </div>
         </div>
     </section>
@@ -417,37 +460,37 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">我們的服務</h2>
+            <h2 class="section-title" data-en="Our Services" data-zh="我们的服务">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <span class="service-icon">🤖</span>
-                    <h3>AI 解決方案</h3>
-                    <p>提供客製化的人工智能解決方案，包括機器學習模型開發、自然語言處理、電腦視覺等先進技術應用。</p>
+                    <h3 data-en="AI Solutions" data-zh="AI解决方案">AI Solutions</h3>
+                    <p data-en="Providing customized artificial intelligence solutions including machine learning model development, natural language processing, computer vision, and other advanced technology applications." data-zh="提供定制化的人工智能解决方案，包括机器学习模型开发、自然语言处理、计算机视觉等先进技术应用。">Providing customized artificial intelligence solutions including machine learning model development, natural language processing, computer vision, and other advanced technology applications.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🎨</span>
-                    <h3>UI/UX 設計</h3>
-                    <p>專業的使用者介面和體驗設計，創造直觀、美觀且功能性強的數位產品，提升用戶滿意度。</p>
+                    <h3 data-en="UI/UX Design" data-zh="UI/UX设计">UI/UX Design</h3>
+                    <p data-en="Professional user interface and experience design, creating intuitive, beautiful, and highly functional digital products to enhance user satisfaction." data-zh="专业的用户界面和体验设计，创造直观、美观且功能性强的数字产品，提升用户满意度。">Professional user interface and experience design, creating intuitive, beautiful, and highly functional digital products to enhance user satisfaction.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">📱</span>
-                    <h3>網站開發</h3>
-                    <p>響應式網站設計與開發，結合現代化技術與設計理念，打造高效能的網路平台。</p>
+                    <h3 data-en="Web Development" data-zh="网站开发">Web Development</h3>
+                    <p data-en="Responsive website design and development, combining modern technology with design concepts to create high-performance web platforms." data-zh="响应式网站设计与开发，结合现代化技术与设计理念，打造高性能的网络平台。">Responsive website design and development, combining modern technology with design concepts to create high-performance web platforms.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">⚡</span>
-                    <h3>智能自動化</h3>
-                    <p>運用AI技術實現業務流程自動化，提高工作效率，降低營運成本，創造更大價值。</p>
+                    <h3 data-en="Smart Automation" data-zh="智能自动化">Smart Automation</h3>
+                    <p data-en="Using AI technology to achieve business process automation, improve work efficiency, reduce operational costs, and create greater value." data-zh="运用AI技术实现业务流程自动化，提高工作效率，降低运营成本，创造更大价值。">Using AI technology to achieve business process automation, improve work efficiency, reduce operational costs, and create greater value.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">📊</span>
-                    <h3>數據分析</h3>
-                    <p>深度數據挖掘與分析服務，透過AI演算法發現商業洞察，協助企業做出明智決策。</p>
+                    <h3 data-en="Data Analytics" data-zh="数据分析">Data Analytics</h3>
+                    <p data-en="Deep data mining and analysis services, discovering business insights through AI algorithms to help enterprises make informed decisions." data-zh="深度数据挖掘与分析服务，通过AI算法发现商业洞察，协助企业做出明智决策。">Deep data mining and analysis services, discovering business insights through AI algorithms to help enterprises make informed decisions.</p>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🔧</span>
-                    <h3>技術諮詢</h3>
-                    <p>提供專業的技術諮詢服務，協助企業規劃數位轉型策略，選擇最適合的技術解決方案。</p>
+                    <h3 data-en="Technical Consulting" data-zh="技术咨询">Technical Consulting</h3>
+                    <p data-en="Providing professional technical consulting services to help enterprises plan digital transformation strategies and choose the most suitable technical solutions." data-zh="提供专业的技术咨询服务，协助企业规划数字化转型策略，选择最适合的技术解决方案。">Providing professional technical consulting services to help enterprises plan digital transformation strategies and choose the most suitable technical solutions.</p>
                 </div>
             </div>
         </div>
@@ -458,14 +501,14 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>關於我們</h2>
-                    <p>我們是一家專注於人工智能與使用者介面設計的創新公司。憑藉豐富的經驗和前瞻性的視野，我們致力於為客戶提供最優質的數位解決方案。</p>
-                    <p>我們的團隊由資深的AI工程師、UI/UX設計師和技術專家組成，擁有多年的行業經驗和深厚的技術底蘊。</p>
+                    <h2 data-en="About Us" data-zh="关于我们">About Us</h2>
+                    <p data-en="We are an innovative company focused on artificial intelligence and user interface design. With rich experience and forward-thinking vision, we are committed to providing the highest quality digital solutions for our clients." data-zh="我们是一家专注于人工智能与用户界面设计的创新公司。凭借丰富的经验和前瞻性的视野，我们致力于为客户提供最优质的数字解决方案。">We are an innovative company focused on artificial intelligence and user interface design. With rich experience and forward-thinking vision, we are committed to providing the highest quality digital solutions for our clients.</p>
+                    <p data-en="Our team consists of senior AI engineers, UI/UX designers, and technical experts with years of industry experience and deep technical expertise." data-zh="我们的团队由资深的AI工程师、UI/UX设计师和技术专家组成，拥有多年的行业经验和深厚的技术底蕴。">Our team consists of senior AI engineers, UI/UX designers, and technical experts with years of industry experience and deep technical expertise.</p>
                     <ul class="about-features">
-                        <li>5年以上AI技術研發經驗</li>
-                        <li>服務超過100家企業客戶</li>
-                        <li>獲得多項設計與技術獎項</li>
-                        <li>24/7專業技術支援服務</li>
+                        <li data-en="5+ years of AI technology R&D experience" data-zh="5年以上AI技术研发经验">5+ years of AI technology R&D experience</li>
+                        <li data-en="Served over 100 enterprise clients" data-zh="服务超过100家企业客户">Served over 100 enterprise clients</li>
+                        <li data-en="Won multiple design and technology awards" data-zh="获得多项设计与技术奖项">Won multiple design and technology awards</li>
+                        <li data-en="24/7 professional technical support service" data-zh="24/7专业技术支持服务">24/7 professional technical support service</li>
                     </ul>
                 </div>
                 <div class="about-image">
@@ -481,20 +524,20 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title">聯絡我們</h2>
-                <p>準備開始您的下一個專案了嗎？我們很樂意與您討論如何協助您實現目標。</p>
+                <h2 class="section-title" data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
+                <p data-en="Ready to start your next project? We'd love to discuss how we can help you achieve your goals." data-zh="准备开始您的下一个项目了吗？我们很乐意与您讨论如何协助您实现目标。">Ready to start your next project? We'd love to discuss how we can help you achieve your goals.</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>📧 電子郵件</h3>
+                        <h3 data-en="📧 Email" data-zh="📧 邮箱">📧 Email</h3>
                         <p>hello@ai-ui-design.com</p>
                     </div>
                     <div class="contact-item">
-                        <h3>📞 電話</h3>
-                        <p>+886 2 1234-5678</p>
+                        <h3 data-en="📞 Phone" data-zh="📞 电话">📞 Phone</h3>
+                        <p data-en="+1 (555) 123-4567" data-zh="+86 400-123-4567">+1 (555) 123-4567</p>
                     </div>
                     <div class="contact-item">
-                        <h3>📍 地址</h3>
-                        <p>Singapore信義區科技大樓<br>12樓AI創新中心</p>
+                        <h3 data-en="📍 Address" data-zh="📍 地址">📍 Address</h3>
+                        <p data-en="Tech Innovation Center<br>Silicon Valley, CA 94043" data-zh="科技创新中心<br>北京市朝阳区 100020">Tech Innovation Center<br>Silicon Valley, CA 94043</p>
                     </div>
                 </div>
             </div>
@@ -509,6 +552,49 @@
     </footer>
 
     <script>
+        // Current language
+        let currentLanguage = 'en';
+
+        // Language switching function
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+            
+            // Update all text content
+            document.querySelectorAll('[data-en][data-zh]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-zh');
+                }
+            });
+            
+            // Update HTML elements with innerHTML (for addresses with line breaks)
+            document.querySelectorAll('[data-en][data-zh]').forEach(element => {
+                if (element.querySelector('br') || element.getAttribute('data-en').includes('<br>') || element.getAttribute('data-zh').includes('<br>')) {
+                    if (lang === 'en') {
+                        element.innerHTML = element.getAttribute('data-en');
+                    } else {
+                        element.innerHTML = element.getAttribute('data-zh');
+                    }
+                }
+            });
+            
+            // Update page title
+            if (lang === 'en') {
+                document.title = 'AI & UI Design Company - Innovative Design, Intelligent Future';
+                document.documentElement.lang = 'en';
+            } else {
+                document.title = 'AI & UI 设计公司 - 创新设计，智能未来';
+                document.documentElement.lang = 'zh-CN';
+            }
+        }
+
         // Loading screen
         window.addEventListener('load', function() {
             const loading = document.getElementById('loading');
